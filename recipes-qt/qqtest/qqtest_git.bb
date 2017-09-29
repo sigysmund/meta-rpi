@@ -20,5 +20,3 @@ do_install() {
 }
 
 FILES_${PN} = "${bindir}"
-
-RDEPENDS_${PN} = "qtdeclarative-qmlplugins"
