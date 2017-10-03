@@ -32,7 +32,7 @@ if [ -z "${MACHINE}" ]; then
 	exit 1
 fi
 
-if [ "${MACHINE}" = "raspberrypi2" ]; then
+if [ "${MACHINE}" = "raspberrypi3" ]; then
 	MACH="rpi3"
 elif [ "${MACHINE}" = "raspberrypi" ]; then
 	MACH="rpi"

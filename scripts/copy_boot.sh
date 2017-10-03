@@ -2,11 +2,11 @@
 
 if [ -z "${MACHINE}" ]; then
 	echo "Environment variable MACHINE not set"
-	echo "Example: export MACHINE=raspberrypi2 or export MACHINE=raspberrypi"
+	echo "Example: export MACHINE=raspberrypi3 or export MACHINE=raspberrypi"
 	exit 1
 fi
 
-if [ "${MACHINE}" != "raspberrypi2" ] && [ "${MACHINE}" != "raspberrypi" ]; then
+if [ "${MACHINE}" != "raspberrypi3" ] && [ "${MACHINE}" != "raspberrypi" ]; then
 	echo "Invalid MACHINE: ${MACHINE}"
 	exit 1
 fi
@@ -144,7 +144,7 @@ for f in ${DTBS}; do
 done
 
 echo "Copying kernel"
-if [ "${MACHINE}" = "raspberrypi2" ]; then 
+if [ "${MACHINE}" = "raspberrypi3" ]; then 
 	sudo cp ${SRCDIR}/Image /media/card/kernel7.img
 else
 	sudo cp ${SRCDIR}/Image /media/card/kernel.img

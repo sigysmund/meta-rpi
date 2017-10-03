@@ -71,12 +71,18 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
 "
 
+LORA_NET = " \
+    lora-gateway \
+    lora-pkt-fwd \
+"
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${WIFI_SUPPORT} \
+    ${LORA_NET} \
 "
 
 set_local_timezone() {
