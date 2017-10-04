@@ -102,6 +102,17 @@ RPI_STUFF = " \
     userland \
 "
 
+LORA_NET = " \
+    lora-gateway \
+    lora-gateway-dbg \
+    lora-gateway-dev \
+    lora-gateway-doc \
+    lora-gateway-staticdev \
+    lora-pkt-fwd \
+    lora-pkt-dbg \
+    lora-pkt-fwd-doc \
+"
+
 IMAGE_INSTALL += " \
     ${CAN_TOOLS} \
     ${CORE_OS} \
@@ -110,6 +121,7 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
     ${WIFI_SUPPORT} \
+    ${LORA_NET} \
 "
 
 set_local_timezone() {
