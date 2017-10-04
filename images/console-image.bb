@@ -109,7 +109,7 @@ LORA_NET = " \
     lora-gateway-doc \
     lora-gateway-staticdev \
     lora-pkt-fwd \
-    lora-pkt-dbg \
+    lora-pkt-fwd-dbg \
     lora-pkt-fwd-doc \
 "
 
