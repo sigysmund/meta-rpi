@@ -73,7 +73,13 @@ EXTRA_TOOLS_INSTALL = " \
 
 LORA_NET = " \
     lora-gateway \
+    lora-gateway-dbg \
+    lora-gateway-dev \
+    lora-gateway-doc \
+    lora-gateway-staticdev \
     lora-pkt-fwd \
+    lora-pkt-fwd-dbg \
+    lora-pkt-fwd-doc \
     lorawan-server \
 "
 
