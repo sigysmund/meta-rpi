@@ -74,6 +74,7 @@ EXTRA_TOOLS_INSTALL = " \
 LORA_NET = " \
     lora-gateway \
     lora-pkt-fwd \
+    lorawan-server \
 "
 
 IMAGE_INSTALL += " \
