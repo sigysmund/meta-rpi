@@ -111,6 +111,7 @@ LORA_NET = " \
     lora-pkt-fwd \
     lora-pkt-fwd-dbg \
     lora-pkt-fwd-doc \
+    erlang \
     lorawan-server \
 "
 
