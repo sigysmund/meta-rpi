@@ -26,6 +26,8 @@ INITSCRIPT_NAME = "lorawan-server"
 INITSCRIPT_PARAMS = "defaults 80 30"
 
 do_compile() {
+    env
+    echo `pwd`
     oe_runmake release
 }
 
