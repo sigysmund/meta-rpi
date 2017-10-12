@@ -26,7 +26,7 @@ INITSCRIPT_NAME = "lorawan-server"
 INITSCRIPT_PARAMS = "defaults 80 30"
 
 do_compile() {
-    PATH=${NATIVE_BIN}:$PATH \
+    #PATH=${NATIVE_BIN}:$PATH \
     oe_runmake release
 }
 
