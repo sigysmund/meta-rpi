@@ -26,7 +26,7 @@ INITSCRIPT_NAME = "lorawan-server"
 INITSCRIPT_PARAMS = "defaults 80 30"
 
 do_compile() {
-    rebar3 release
+    oe_runmake release
 }
 
 do_install() {
