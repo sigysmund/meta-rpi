@@ -17,7 +17,7 @@ S = "${WORKDIR}/git"
 RDEPENDS_${PN} += "bash nodejs erlang erlang-compiler erlang-syntax-tools erlang-crypto \
     erlang-inets erlang-asn1 erlang-public-key erlang-ssl erlang-mnesia erlang-os-mon"
 
-inherit useradd update-rc.d npm
+inherit useradd update-rc.d
 
 USERADD_PACKAGES = "${PN}"
 USERADD_PARAM_${PN} = "--home-dir /var/lib/lorawan-server --create-home lorawan"
