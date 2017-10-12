@@ -2,7 +2,7 @@ DESCRIPTION = "Compact server for private LoRa networks"
 HOMEPAGE = "https://gotthardp.github.io/lorawan-server/"
 SECTION = "console/utils"
 # https://github.com/joaohf/meta-erlang
-DEPENDS = "erlang-native rebar3-native nodejs"
+DEPENDS = "erlang-native rebar3-native nodejs-native"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -26,8 +26,6 @@ INITSCRIPT_NAME = "lorawan-server"
 INITSCRIPT_PARAMS = "defaults 80 30"
 
 do_compile() {
-    env
-    echo `pwd`
     oe_runmake release
 }
 
