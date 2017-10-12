@@ -2,7 +2,7 @@ DESCRIPTION = "Compact server for private LoRa networks"
 HOMEPAGE = "https://gotthardp.github.io/lorawan-server/"
 SECTION = "console/utils"
 # https://github.com/joaohf/meta-erlang
-DEPENDS = "erlang-native nodejs-npm"
+DEPENDS = "erlang-native nodejs"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -14,10 +14,10 @@ SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS_${PN} += "bash erlang erlang-compiler erlang-syntax-tools erlang-crypto \
+RDEPENDS_${PN} += "bash nodejs erlang erlang-compiler erlang-syntax-tools erlang-crypto \
     erlang-inets erlang-asn1 erlang-public-key erlang-ssl erlang-mnesia erlang-os-mon"
 
-inherit useradd update-rc.d
+inherit useradd update-rc.d npm
 
 USERADD_PACKAGES = "${PN}"
 USERADD_PARAM_${PN} = "--home-dir /var/lib/lorawan-server --create-home lorawan"
