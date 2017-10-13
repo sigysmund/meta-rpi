@@ -14,7 +14,7 @@ SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS_${PN} += "bash nodejs erlang erlang-compiler erlang-syntax-tools erlang-crypto \
+RDEPENDS_${PN} += "bash nodejs rebar3 erlang erlang-compiler erlang-syntax-tools erlang-crypto \
     erlang-inets erlang-asn1 erlang-public-key erlang-ssl erlang-mnesia erlang-os-mon"
 
 inherit useradd update-rc.d
