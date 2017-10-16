@@ -102,6 +102,17 @@ RPI_STUFF = " \
     userland \
 "
 
+AUX_STUFF = " \
+    mc \
+    tcpdump \
+    netcat \
+    traceroute \
+    ntp \
+    netperf \
+    valgrind \
+    screen \    
+"
+
 LORA_NET = " \
     lora-gateway \
     lora-gateway-dbg \
@@ -124,6 +135,7 @@ IMAGE_INSTALL += " \
     ${RPI_STUFF} \
     ${WIFI_SUPPORT} \
     ${LORA_NET} \
+    ${AUX_STUFF} \
 "
 
 set_local_timezone() {
