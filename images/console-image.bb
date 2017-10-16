@@ -108,7 +108,11 @@ AUX_STUFF = " \
     netcat \
     traceroute \
     ntp \
-    ntop \
+    atop \
+    iftop \
+    iotop \
+    htop \
+    powertop \
     netperf \
     valgrind \
     screen \    
