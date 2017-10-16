@@ -113,7 +113,6 @@ AUX_STUFF = " \
     iotop \
     htop \
     powertop \
-    netperf \
     valgrind \
     screen \    
 "
