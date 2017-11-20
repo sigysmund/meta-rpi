@@ -89,6 +89,34 @@ RPI_STUFF = " \
     userland \
 "
 
+AUX_STUFF = " \
+    mc \
+    tcpdump \
+    netcat \
+    traceroute \
+    ntp \
+    atop \
+    iftop \
+    iotop \
+    htop \
+    powertop \
+    valgrind \
+    screen \
+"
+
+LORA_NET = " \
+    lora-gateway \
+    lora-gateway-dbg \
+    lora-gateway-dev \
+    lora-gateway-doc \
+    lora-gateway-staticdev \
+    lora-pkt-fwd \
+    lora-pkt-fwd-dbg \
+    lora-pkt-fwd-doc \
+    erlang \
+    lorawan-server \
+"
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
@@ -96,6 +124,8 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
     ${WIFI_SUPPORT} \
+    ${LORA_NET} \
+    ${AUX_STUFF} \
 "
 
 set_local_timezone() {

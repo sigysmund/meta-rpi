@@ -2,11 +2,11 @@
 
 if [ -z "${MACHINE}" ]; then
 	echo "Environment variable MACHINE not set"
-	echo "Example: export MACHINE=raspberrypi2 or export MACHINE=raspberrypi"
+	echo "Example: export MACHINE=raspberrypi3 or export MACHINE=raspberrypi"
 	exit 1
 fi
 
-if [ "${MACHINE}" != "raspberrypi2" ] && [ "${MACHINE}" != "raspberrypi" ]; then
+if [ "${MACHINE}" != "raspberrypi3" ] && [ "${MACHINE}" != "raspberrypi" ]; then
 	echo "Invalid MACHINE: ${MACHINE}"
 	exit 1
 fi
@@ -66,14 +66,14 @@ for f in ${BOOTLDRFILES}; do
 done
 
 for f in ${DTBS}; do
-	if [ ! -f ${SRCDIR}/Image-${f} ]; then
-		echo "dtb not found: ${SRCDIR}/Image-${f}"
+	if [ ! -f ${SRCDIR}/uImage-${f} ]; then
+		echo "dtb not found: ${SRCDIR}/uImage-${f}"
 		exit 1
 	fi
 done
 	
-if [ ! -f ${SRCDIR}/Image ]; then
-	echo "Kernel file not found: ${SRCDIR}/Image"
+if [ ! -f ${SRCDIR}/uImage ]; then
+	echo "Kernel file not found: ${SRCDIR}/uImage"
 	exit 1
 fi
 
@@ -117,7 +117,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Copying overlay dtbos"
-for f in ${SRCDIR}/Image-*.dtbo; do
+for f in ${SRCDIR}/uImage-*.dtbo; do
 	if [ -L $f ]; then
 		sudo cp $f /media/card/overlays
 	fi
@@ -129,12 +129,12 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-echo "Stripping 'Image-' from overlay dtbos"
-sudo rename 's/Image-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+echo "Stripping 'uImage-' from overlay dtbos"
+sudo rename 's/uImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
 
 echo "Copying dtbs"
 for f in ${DTBS}; do
-	sudo cp ${SRCDIR}/Image-${f} /media/card/${f}
+	sudo cp ${SRCDIR}/uImage-${f} /media/card/${f}
 
 	if [ $? -ne 0 ]; then
 		echo "Error copying dtb: $f"
@@ -144,10 +144,10 @@ for f in ${DTBS}; do
 done
 
 echo "Copying kernel"
-if [ "${MACHINE}" = "raspberrypi2" ]; then 
-	sudo cp ${SRCDIR}/Image /media/card/kernel7.img
+if [ "${MACHINE}" = "raspberrypi3" ]; then 
+	sudo cp ${SRCDIR}/uImage /media/card/kernel7.img
 else
-	sudo cp ${SRCDIR}/Image /media/card/kernel.img
+	sudo cp ${SRCDIR}/uImage /media/card/kernel.img
 fi
 
 if [ $? -ne 0 ]; then
