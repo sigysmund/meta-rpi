@@ -75,8 +75,18 @@ fi
 echo "Formatting ${DEV} as ext4"
 sudo mkfs.ext4 -q -L ROOT ${DEV}
 
+if [ "$?" -ne 0 ]; then
+	echo "Error formatting ${DEV} as ext4"
+	exit 1
+fi
+
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
+
+if [ "$?" -ne 0 ]; then
+	echo "Error mounting ${DEV} at /media/card"
+	exit 1
+fi
 
 echo "Extracting ${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
 sudo tar --numeric-owner -C /media/card -xJf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz

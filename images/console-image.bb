@@ -75,17 +75,13 @@ EXTRA_TOOLS_INSTALL = " \
     tcpdump \
     unzip \
     util-linux \
-    vim \
     wget \
     zip \
 "
 
 RPI_STUFF = " \
-    bcm2835-tests \
     omxplayer \
     raspi2fb \
-    rpio \
-    rpi-gpio \
     userland \
 "
 
